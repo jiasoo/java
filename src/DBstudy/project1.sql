@@ -1,0 +1,37 @@
+CREATE table placetable(
+ placenumber NUMBER NOT null PRIMARY key,
+ placename VARCHAR2(50),
+ placelocation VARCHAR2(50),
+ placedescription VARCHAR2(50),
+ placeprice NUMBER,
+ placereview VARCHAR2(50)
+);
+CREATE TABLE USERTABLE (
+    USERID VARCHAR2(15) NOT NULL PRIMARY KEY,
+    USERPWD VARCHAR2(20),
+    USERNAME VARCHAR2(10),
+    USERBIRTHDAY DATE,
+    USEREMAIL VARCHAR2(30),
+    USERPHONE NUMBER,
+    USERTERMS NUMBER(1,0)
+);
+
+CREATE SEQUENCE PLACE_SEQ
+INCREMENT BY 1
+START WITH 1
+NOCYCLE;
+
+INSERT INTO PLACETABLE
+VALUES (PLACE_SEQ.NEXTVAL, 'Tikal', 'Peten, Guatemala', 'Maya Temple', 1000 ,2);
+INSERT INTO PLACETABLE
+VALUES (PLACE_SEQ.NEXTVAL, 'Gimpo', 'Gyonggi, South Korea', 'mola', 2000 ,1);
+INSERT INTO PLACETABLE
+VALUES (PLACE_SEQ.NEXTVAL, 'Medellin', 'Colombia', 'Narcos', 420 ,5);
+
+INSERT INTO USERTABLE
+VALUES ('shlee','11111','soohwan','1998-04-15' , 'shlee@ict.edu.kr',01004200420 ,1 );
+INSERT INTO USERTABLE
+VALUES ('kjun','1231','yeonjun','1998-04-26' , 'kjunspicy@ict.edu.kr',01055551124 ,1 );
+
+select * from placetable;
+COMMIT;
